@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -52,6 +53,8 @@ public class ListCreationActivity extends AppCompatActivity {
                 (this, stringArrayList);
 
         groceryListView.setAdapter(arrayAdapter);
+        Toast.makeText(getApplicationContext(),"To put multiple items spearate by putting a comma", Toast.LENGTH_SHORT).show();
+
     }
 
     public void addToList(View view) {
