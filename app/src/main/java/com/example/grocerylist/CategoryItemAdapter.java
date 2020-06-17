@@ -13,8 +13,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class CategoryItemAdapter extends ArrayAdapter<CategoryItem> {
-    public CategoryItemAdapter(Context context, ArrayList list) {
+public class CategoryItemAdapter extends ArrayAdapter<String> {
+    public CategoryItemAdapter(Context context, String[] list) {
         super(context, 0, list);
     }
 
@@ -22,9 +22,9 @@ public class CategoryItemAdapter extends ArrayAdapter<CategoryItem> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.existing_list_item, parent, false);
-        CategoryItem currentCategoryItem = getItem(position);
+        String currentStringItem = getItem(position);
         TextView categoryItemTextView = convertView.findViewById(R.id.item_in_grocery_list);
-        categoryItemTextView.setText(currentCategoryItem.getName());
+        categoryItemTextView.setText(currentStringItem);
 
         return convertView;
     }
