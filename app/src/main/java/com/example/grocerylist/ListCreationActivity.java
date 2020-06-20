@@ -19,12 +19,17 @@ import java.util.ArrayList;
 public class ListCreationActivity extends AppCompatActivity {
 
     EditText itemName;
+
+    EditText listName;
+
     String actualItem;
+    String actualListName = "";
+
     SharedPreferences sharedPrefs;
     FirebaseDatabase fdb;
     DatabaseReference dr;
 
-    String sharedPrefString;
+    String sharedPrefString = "";
 
     ArrayList<String> arrayListOfGroceryItems = new ArrayList<String>();
 
@@ -35,15 +40,21 @@ public class ListCreationActivity extends AppCompatActivity {
 
 
         itemName = findViewById(R.id.item_name);
+        listName = findViewById(R.id.list_name);
 
 
         sharedPrefs
                 = getSharedPreferences("MySharedPrefs", MODE_PRIVATE);
 
-        fdb = FirebaseDatabase.getInstance();
-        dr = fdb.getReference().child("grocery list");
+        //fdb = FirebaseDatabase.getInstance();
+        //dr = fdb.getReference().child("grocery list");
 
-        sharedPrefString = sharedPrefs.getString("grocery list", "Empty List");
+
+        if (sharedPrefString != "") {
+            sharedPrefString = sharedPrefs.getString(actualListName, "Empty List");
+        }
+
+        //sharedPrefString = sharedPrefs.getString("grocery list", "Empty List");
 
         ListView groceryListView = findViewById(R.id.groceryLV);
 
@@ -57,15 +68,26 @@ public class ListCreationActivity extends AppCompatActivity {
 
     }
 
+    public void createList(View view) {
+        actualListName = listName.getText().toString();
+
+//        sharedPrefs
+//                = getSharedPreferences("MySharedPrefs", MODE_PRIVATE);
+
+        sharedPrefString = sharedPrefs.getString(actualListName, "Empty List");
+    }
+
     public void addToList(View view) {
 
         actualItem = itemName.getText().toString();
 
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
-        editor.putString("grocery list", sharedPrefString + actualItem + ", ");
+        editor.putString(actualListName, sharedPrefString + actualItem + ", ");
 
         editor.apply();
+
+        sharedPrefString = sharedPrefs.getString(actualListName, "Empty List");
 
         finish();
         startActivity(getIntent());
