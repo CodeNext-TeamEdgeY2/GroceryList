@@ -47,9 +47,14 @@
         android:layout_gravity="center"
         android:onClick="addToList"/>
 
+    <!--<ListView
+        android:id="@+id/groceryLV"
+        android:layout_width="wrap_content"
+        android:layout_height="600dp"></ListView>-->
     <ListView
         android:id="@+id/groceryLV"
         android:layout_width="wrap_content"
-        android:layout_height="436dp"></ListView>
+        android:layout_height="wrap_content">
+    </ListView>
 
 </LinearLayout>
