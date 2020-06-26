@@ -10,9 +10,13 @@
     <TextView
         android:id="@+id/item_in_grocery_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:gravity="center"
+        android:layout_height="40dp"
+        android:fontFamily="@font/base_font"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:textColor="#000000"
+        android:textSize="17dp"
+
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="37dp" />
 </LinearLayout>

@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
         arrayAdapter.notifyDataSetChanged();
 
-        //finish();
-        //startActivity(getIntent());
+        finish();
+        startActivity(getIntent());
     }
 }
