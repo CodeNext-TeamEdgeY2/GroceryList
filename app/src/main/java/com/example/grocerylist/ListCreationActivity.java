@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 
-//public class ListCreationActivity extends AppCompatActivity {
+public class ListCreationActivity extends AppCompatActivity {
 //
 //    EditText itemName;
 //
@@ -117,4 +117,4 @@ import java.util.ArrayList;
 //        //finish();
 //        //startActivity(getIntent());
 //    }
-//}
+}
