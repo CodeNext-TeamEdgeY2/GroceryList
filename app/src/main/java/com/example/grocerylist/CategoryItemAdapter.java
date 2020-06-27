@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class CategoryItemAdapter extends ArrayAdapter<String> {
-    public CategoryItemAdapter(Context context, String[] list) {
+    public CategoryItemAdapter(Context context, ArrayList<String> list) {
         super(context, 0, list);
     }
 
